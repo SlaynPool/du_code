@@ -11,15 +11,15 @@ typedef struct chemin_t{
 
 typedef struct pile_t{
     int lastItem;
-    chemin* route[]; 
+    chemin_s* route[1000]; 
 }pile_s;
 
 
 
 int saveroad(chemin_s* route,int pos_x, int pos_y);
-// return 1 or 0 for SUCESS OR FAIL
+// return 0 or 1 for SUCESS OR FAIL
 int empty(pile_s* mapile);
-//return 1 or 0 for SUCESS OR FAIL
+//return 0 or 1 for SUCESS OR FAIL
 void add(pile_s* mapile, int pos_x, int pos_y );
 chemin_s* backward(pile_s* mapile)
 
