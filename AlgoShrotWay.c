@@ -1,6 +1,6 @@
 # include <stdio.h>
 # include <stdlib.h>
-
+# include "bibli.h"
 
 /*T[X][Y] 	 Signification 
  	-1 		 "case bloquée par un obstacle" 
@@ -9,6 +9,8 @@
  	-2 		 "case du segment de chemin déjà tracée.
  *
  */
+
+
 
 void printmap( int** map, int tab_x , int  tab_y){
     for( int i=0; i< tab_x;i++){
