@@ -27,7 +27,32 @@ void printmap( int** map, int tab_x , int  tab_y){
 int** generate(int** map, int tab_x, int tab_y){
     for( int i=0; i< tab_x;i++){
         for( int y=0; y< tab_y;y++){
-            if( rand()%10 <= 8 ){
+
+            // pour me simplifier la vie les bordures du labyrinthe seront en faite des obstacles 
+            if ( i == 0 || i== tab_x-1 ) {
+                map [i][y] = -1;
+            }
+            else if (y==0 || y == tab_y-1){
+                    map[i][y] = -1;
+            }
+            else{ 
+                if( rand()%10 <= 8 ){ // generation d'obstacle 30 % de chance d'avoir une case à obstacle
+                map[i][y]=0;
+                }
+                else{
+                    map[i][y]=-1;
+                
+
+                }
+
+            }
+            
+
+
+
+
+/*
+            if( rand()%10 <= 8 ){ // generation d'obstacle 30 % de chance d'avoir une case à obstacle
             
             map[i][y]=0;
 
@@ -36,12 +61,15 @@ int** generate(int** map, int tab_x, int tab_y){
                 map[i][y]=-1;
                         
             }
+            */
         }
     } 
     
 return map;
 }
-
+// on fera juste bougé la fourmi ici
+// elle aura donc besoin de la map  vc
+int bouge();
 
 
 int main(){
@@ -60,7 +88,9 @@ int main(){
     }
     map = generate(map,tab_x, tab_y); 
     printmap(map, tab_x, tab_y);
-   
+    //Pour parcourrir le tableau on considère le point de depart en 0,0 
+    //et le point d'arriver tab_x tab_y soit l'exact opposé 
+
     for (int i=0; i<tab_x; i++){
         free(map[i]);
     }
