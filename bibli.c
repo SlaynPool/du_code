@@ -4,7 +4,7 @@
 
 #include "bibli.h"
 
-int rand(){
+int customrand(){
     static int i;
     i = 0;
     if (i == 0 ) {

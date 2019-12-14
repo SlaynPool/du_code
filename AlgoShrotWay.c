@@ -26,11 +26,18 @@ void printmap( int** map, int tab_x , int  tab_y){
 int** generate(int** map, int tab_x, int tab_y){
     for( int i=0; i< tab_x;i++){
         for( int y=0; y< tab_y;y++){
-            map[i][y]=0;
+            if( customrand()%10 <=8 ){
             
+            map[i][y]=0;
+
+            }  
+            else {
+                map[i][y]=-1;
+                        
+            }
         }
-        
-    }
+    } 
+    
 return map;
 }
 

@@ -14,7 +14,7 @@ typedef struct pile_t{
     chemin_s* route[1000]; 
 }pile_s;
 
-
+int customrand();
 
 int saveroad(chemin_s* route,int pos_x, int pos_y);
 // return 0 or 1 for SUCESS OR FAIL
