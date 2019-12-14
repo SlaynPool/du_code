@@ -18,10 +18,10 @@ int empty(pile_s* mapile){
     }
 
 }
-void add( pile_s* mapile, int pos_x, int pos_y){
+void add( pile_s* mapile, chemin_s* chemin){
     //Ajout d'un item dans la pile 
     mapile->lastItem++;
-    mapile->route[mapile->lastItem] = malloc(sizeof (chemin_s));
+    mapile->route[mapile->lastItem] = chemin;
 
 
 }
