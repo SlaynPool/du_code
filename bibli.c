@@ -4,16 +4,7 @@
 
 #include "bibli.h"
 
-int customrand(){
-    static int i;
-    i = 0;
-    if (i == 0 ) {
-        srand(time(NULL));
-        i=1;
-    }
-    return (rand());
 
-}
 
 
 

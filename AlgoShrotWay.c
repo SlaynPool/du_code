@@ -1,6 +1,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include "bibli.h"
+# include <time.h>
 
 /*T[X][Y] 	 Signification 
  	-1 		 "case bloquée par un obstacle" 
@@ -26,7 +27,7 @@ void printmap( int** map, int tab_x , int  tab_y){
 int** generate(int** map, int tab_x, int tab_y){
     for( int i=0; i< tab_x;i++){
         for( int y=0; y< tab_y;y++){
-            if( customrand()%10 <=8 ){
+            if( rand()%10 <= 8 ){
             
             map[i][y]=0;
 
@@ -46,11 +47,10 @@ return map;
 int main(){
     int tab_x; //taille du tableau en x
     int tab_y; // taille du tableau en y
-   
     
     tab_x = 40;
     tab_y = 40;
-    
+    srand(time(NULL));
 
     int** map;
     map = malloc ( tab_x * sizeof( int*));
@@ -65,6 +65,10 @@ int main(){
         free(map[i]);
     }
     free(map);
+
+    printf( "rand %d ", rand());
+
+    printf( "1: rand %d ", rand());
 
     return 0;
 
