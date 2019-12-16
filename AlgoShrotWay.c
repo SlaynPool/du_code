@@ -17,8 +17,12 @@
 void printmap( int** map, int tab_x , int  tab_y){
     for( int i=0; i< tab_x;i++){
         for( int y=0; y< tab_y;y++){
-           printf("%d",map[i][y]);
-            
+           if( map[i][y] == -1 ){
+                printf("|");
+           }
+           else {
+                printf("%d",map[i][y]);
+           }
         }
         printf("\n");
     }
@@ -57,8 +61,8 @@ int main(){
     int tab_x; //taille du tableau en x
     int tab_y; // taille du tableau en y
     
-    tab_x = 40;
-    tab_y = 40;
+    tab_x = 60;
+    tab_y = 60;
     
     srand(time(NULL));
 
